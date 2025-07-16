@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Undangan Wisuda -           </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 50
+      });
+    </script>
+    <script src="./js/script.js"></script>
+  </body>S.Kom</title>
+    <link href="./css/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+      h1,
+      h2 {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <!-- Cover Page -->
+    <section id="cover-page" class="fixed inset-0 z-50 bg-gradient-to-br from-indigo-600 to-blue-900 flex items-center justify-center">
+      <div class="text-center text-white p-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+        <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-8">
+          Undangan Wisuda
+        </h1>
+        <p class="text-xl md:text-2xl mb-4 opacity-90">
+          Dengan hormat, kami mengundang
+        </p>
+        <p id="cover-nama-tamu" class="text-2xl md:text-3xl font-semibold mb-12">
+          Kepada Yth. Tamu Undangan
+        </p>
+        <div class="mb-12 space-y-2">
+          <h2 class="text-3xl md:text-4xl font-playfair font-bold">
+            Akbar Wijaya, S.Kom
+          </h2>
+          <p class="text-xl opacity-90">Program Studi: Informatika</p>
+          <p class="text-xl opacity-90">
+            Universitas Teknologi Digital Indonesia
+          </p>
+        </div>
+        <button
+          id="open-invitation"
+          class="bg-white text-indigo-800 px-8 py-3 rounded-lg font-bold text-lg transform transition duration-300 hover:scale-105 hover:shadow-lg"
+        >
+          Buka Undangan
+        </button>
+      </div>
+    </section>
+
+    <!-- Main Content -->
+    <main id="main-content" class="opacity-0 pointer-events-none">
+      <div class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen flex items-center justify-center py-12 px-4">
+        <div
+          class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl w-full text-center border-t-8 border-indigo-600"
+      data-aos="fade-up"
+      data-aos-duration="800"
+    >
+      <h1
+        class="text-4xl md:text-5xl font-bold text-indigo-800 mb-6"
+        data-aos="fade-up"
+        data-aos-delay="200"
+      >
+        Undangan Wisuda
+      </h1>
+
+      <p
+        class="text-gray-700 text-lg mb-2"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        Dengan hormat, kami mengundang
+      </p>
+      <p
+        class="text-gray-900 text-xl md:text-2xl font-semibold mb-8"
+        id="nama-tamu"
+        data-aos="zoom-in"
+        data-aos-delay="600"
+      >
+        Kepada Yth. Tamu Undangan
+      </p>
+
+      <div class="mb-10" data-aos="zoom-in" data-aos-delay="800">
+        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">
+          Akbar Wijaya, S.Kom
+        </h2>
+        <p class="text-gray-600 text-lg">Program Studi: Informatika</p>
+        <p class="text-gray-600 text-lg">
+          Universitas Teknologi Digital Indonesia
+        </p>
+      </div>
+
+      <div
+        class="border-t border-b border-gray-200 py-8 mb-10"
+        data-aos="slide-left"
+        data-aos-duration="800"
+      >
+        <h3 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-6">
+          Detail Acara
+        </h3>
+        <p class="text-gray-700 text-lg mb-2">
+          <span class="font-bold">Hari, Tanggal:</span> Sabtu, 27 Juli 2025
+        </p>
+        <p class="text-gray-700 text-lg mb-2">
+          <span class="font-bold">Waktu:</span> 08.00 WIB
+        </p>
+        <p class="text-gray-700 text-lg mb-2">
+          <span class="font-bold">Lokasi:</span> Auditorium Utama, Universitas
+          Teknologi Digital Indonesia, Jl. Teknologi No. 10, Yogyakarta
+        </p>
+        <p class="text-gray-700 text-lg">
+          <span class="font-bold">Jenis Acara:</span> Upacara Wisuda & Syukuran
+        </p>
+      </div>
+
+      <div
+        class="mt-10 p-6 bg-indigo-50 rounded-lg shadow-inner"
+        data-aos="fade-up"
+        data-aos-duration="800"
+      >
+        <h3 class="text-2xl font-bold text-indigo-700 mb-6">
+          Konfirmasi Kehadiran
+        </h3>
+        <form id="rsvp-form" class="space-y-4">
+          <div>
+            <label
+              for="nama_rsvp"
+              class="block text-left text-gray-700 text-sm font-bold mb-2"
+              >Nama Lengkap:</label
+            >
+            <input
+              type="text"
+              id="nama_rsvp"
+              name="nama"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            />
+          </div>
+          <div>
+            <label
+              for="kehadiran"
+              class="block text-left text-gray-700 text-sm font-bold mb-2"
+              >Kehadiran:</label
+            >
+            <select
+              id="kehadiran"
+              name="kehadiran"
+              class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              required
+            >
+              <option value="">Pilih Kehadiran</option>
+              <option value="hadir">Akan Hadir</option>
+              <option value="tidak hadir">Tidak Dapat Hadir</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="ucapan"
+              class="block text-left text-gray-700 text-sm font-bold mb-2"
+              >Ucapan/Doa:</label
+            >
+            <textarea
+              id="ucapan"
+              name="ucapan"
+              rows="4"
+              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Berikan ucapan selamat atau doa terbaik Anda..."
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out"
+          >
+            Kirim Konfirmasi
+          </button>
+        </form>
+        <p id="rsvp-message" class="mt-4 text-sm text-green-700 hidden"></p>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        once: false,
+        mirror: true,
+        offset: 50,
+      });
+    </script>
+    <script src="./js/script.js"></script>
+  </body>
+</html>
