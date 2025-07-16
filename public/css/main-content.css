@@ -1,0 +1,124 @@
+/* Styles for main content page */
+
+/* Main content initial state */
+#main-content {
+  transition: opacity 0.5s ease;
+}
+
+/* Disable AOS animations when scrolling up */
+[data-aos].aos-animate {
+  transition-duration: 0ms !important;
+}
+
+/* Only enable animations when scrolling down */
+[data-aos]:not(.aos-animate) {
+  transition-duration: 600ms !important;
+}
+
+/* Remove transform animations */
+[data-aos^="fade"][data-aos^="fade"].aos-animate {
+  transform: none !important;
+}
+
+/* Card styles */
+.content-card {
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  margin-bottom: 2rem;
+  padding: 2rem;
+}
+
+/* Section headers */
+.section-title {
+  color: #1e40af;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 3px solid #4f46e5;
+  display: inline-block;
+}
+
+/* Information sections */
+.info-section {
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Detail list styling */
+.detail-list {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detail-list p {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.5rem;
+  border-left: 4px solid #4f46e5;
+}
+
+/* Form styling */
+.form-group {
+  margin-bottom: 1.5rem;
+  text-align: left;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.8);
+  transition: border-color 0.2s ease;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #4f46e5;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+/* Button styling */
+.submit-button {
+  background-color: #4f46e5;
+  color: white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: #4338ca;
+}
+
+/* Additional helper classes */
+.text-important {
+  font-weight: 700;
+  color: #1e40af;
+}
+
+.event-time {
+  font-size: 1.25rem;
+  color: #4f46e5;
+  margin: 1rem 0;
+  padding: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 0.5rem;
+  display: inline-block;
+}

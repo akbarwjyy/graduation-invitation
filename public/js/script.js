@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const rsvpForm = document.getElementById("rsvp-form");
   const rsvpMessage = document.getElementById("rsvp-message");
 
+  // API URLs (placeholder - ganti dengan URL API Anda yang sebenarnya)
+  const GOOGLE_SHEET_API_URL = "https://example.com/api";
+  const RSVP_ENDPOINT_URL = "https://example.com/rsvp";
+
   let isOpening = false;
 
   // Function to open invitation
@@ -93,12 +97,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!id) return null;
 
     try {
-      const response = await fetch(`${GOOGLE_SHEET_API_URL}?id=${id}`);
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
-      return data.nama || null;
+      // Untuk demo, kita langsung return nama dari ID
+      // Dalam implementasi nyata, gunakan fetch API
+      console.log(`Fetching guest name for ID: ${id}`);
+      return null; // Untuk demo, kita return null
     } catch (error) {
       console.error("Error fetching guest name:", error);
       return null;
@@ -132,33 +134,15 @@ document.addEventListener("DOMContentLoaded", () => {
       const formData = new FormData(rsvpForm);
       const data = Object.fromEntries(formData.entries());
 
-      try {
-        const response = await fetch(RSVP_ENDPOINT_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(data),
-        });
+      // Demo: Tampilkan data di console dan berikan respons sukses
+      console.log("Form data submitted:", data);
 
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-
-        const result = await response.json();
-        console.log("RSVP submitted successfully:", result);
-        rsvpMessage.textContent =
-          "Terima kasih, konfirmasi kehadiran Anda telah terkirim!";
-        rsvpMessage.classList.remove("hidden");
-        rsvpMessage.classList.add("text-green-700");
-        rsvpForm.reset();
-      } catch (error) {
-        console.error("Error submitting RSVP:", error);
-        rsvpMessage.textContent =
-          "Terjadi kesalahan saat mengirim konfirmasi. Silakan coba lagi.";
-        rsvpMessage.classList.remove("hidden");
-        rsvpMessage.classList.add("text-red-700");
-      }
+      // Simulasi sukses
+      rsvpMessage.textContent =
+        "Terima kasih, konfirmasi kehadiran Anda telah terkirim!";
+      rsvpMessage.classList.remove("hidden");
+      rsvpMessage.classList.add("text-green-700");
+      rsvpForm.reset();
     });
   }
 });

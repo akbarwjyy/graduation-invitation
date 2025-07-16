@@ -1,0 +1,195 @@
+/* Tema wisuda dengan elemen akademik */
+
+/* Warna tema wisuda */
+:root {
+  --navy: #0a2342;
+  --gold: #d4af37;
+  --maroon: #800020;
+  --cream: #f8f0e3;
+  --dark-gold: #b8860b;
+}
+
+/* Background dengan warna akademik */
+#cover-page {
+  background: linear-gradient(135deg, var(--navy), #1a365d);
+  background-size: 200% 200%;
+  animation: gradientAnimation 15s ease infinite;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Overlay pattern akademik */
+#cover-page::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 0 L100 50 L50 100 L0 50 Z" fill="none" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></svg>');
+  background-size: 50px 50px;
+  opacity: 0.1;
+}
+
+/* Siluet universitas di bagian bawah */
+#cover-page::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  background-image: url('data:image/svg+xml;utf8,<svg width="1000" height="100" viewBox="0 0 1000 100" xmlns="http://www.w3.org/2000/svg"><path d="M0 100 L0 70 L50 70 L75 40 L100 70 L150 70 L150 60 L200 60 L200 80 L250 80 L250 50 L300 50 L310 30 L320 50 L350 50 L350 75 L400 75 L450 45 L500 75 L550 60 L600 80 L650 70 L700 85 L750 55 L800 70 L850 40 L900 60 L950 65 L1000 50 L1000 100 Z" fill="%230a2342" opacity="0.8"/></svg>');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Card dengan border diploma */
+.glass-card {
+  background-color: rgba(248, 240, 227, 0.1);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 2px solid var(--gold);
+  border-radius: 0.75rem;
+  position: relative;
+  padding: 1.5rem;
+  box-shadow: 0 0 20px rgba(212, 175, 55, 0.2);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Border diploma ornamental */
+.diploma-border {
+  position: relative;
+}
+
+.diploma-border::before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  background-image: linear-gradient(
+      45deg,
+      transparent 49%,
+      var(--gold) 49%,
+      var(--gold) 51%,
+      transparent 51%
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 49%,
+      var(--gold) 49%,
+      var(--gold) 51%,
+      transparent 51%
+    );
+  background-size: 20px 20px;
+  background-position: 0 0, 10px 0;
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+/* Tombol dengan warna emas */
+.pulse-button {
+  background: linear-gradient(to right, var(--gold), var(--dark-gold));
+  color: var(--navy);
+  border: 1px solid var(--cream);
+  animation: pulse 2s infinite;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Animasi toga berputar */
+.rotating-cap {
+  animation: rotate 20s linear infinite;
+  transform-origin: center;
+  display: inline-block;
+}
+
+/* Animasi scroll unroll */
+.scroll-icon {
+  transition: transform 0.5s ease;
+}
+
+.scroll-icon:hover {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Animasi untuk laurel */
+.laurel-icon {
+  transition: all 0.3s ease;
+}
+
+.laurel-icon:hover {
+  filter: brightness(1.5);
+  transform: scale(1.05);
+}
+
+/* Animasi gradient */
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Animasi pulse untuk tombol */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 10px rgba(212, 175, 55, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(212, 175, 55, 0);
+  }
+}
+
+/* Animasi rotasi untuk toga */
+@keyframes rotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tipografi formal */
+.formal-title {
+  font-family: "Cormorant Garamond", serif;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  line-height: 1.2;
+}
+
+.ornamental-initial::first-letter {
+  font-size: 1.1em;
+  color: var(--gold);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+/* Watermark akademik */
+.academic-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 15rem;
+  opacity: 0.03;
+  color: var(--gold);
+  pointer-events: none;
+  z-index: -1;
+}

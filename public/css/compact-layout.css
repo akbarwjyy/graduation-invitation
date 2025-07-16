@@ -1,0 +1,55 @@
+/* Compact layout untuk halaman cover */
+.glass-card {
+  padding: 1rem !important;
+}
+
+.glass-card h1 {
+  font-size: 1.75rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.glass-card h2 {
+  font-size: 1.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.glass-card p {
+  margin-bottom: 0.5rem !important;
+}
+
+.glass-card .mb-8 {
+  margin-bottom: 0.75rem !important;
+}
+
+.glass-card .mb-6 {
+  margin-bottom: 0.5rem !important;
+}
+
+.glass-card .mb-10,
+.glass-card .mb-12 {
+  margin-bottom: 1rem !important;
+}
+
+.glass-card .my-8,
+.glass-card .my-6 {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.glass-card .p-6 {
+  padding: 0.5rem !important;
+}
+
+@media (min-width: 768px) {
+  .glass-card {
+    padding: 1.5rem !important;
+  }
+
+  .glass-card h1 {
+    font-size: 2rem !important;
+  }
+
+  .glass-card h2 {
+    font-size: 1.75rem !important;
+  }
+}

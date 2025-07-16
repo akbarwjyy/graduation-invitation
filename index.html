@@ -5,62 +5,152 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Undangan Wisuda - Akbar Wijaya, S.Kom</title>
     <link href="./public/css/output.css" rel="stylesheet" />
+    <link href="./public/css/inline-styles.css" rel="stylesheet" />
+    <link href="./public/css/compact-layout.css" rel="stylesheet" />
+    <link href="./public/css/main-content.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
-    <style>
-      body {
-        font-family: "Roboto", sans-serif;
-      }
-      h1,
-      h2 {
-        font-family: "Playfair Display", serif;
-      }
-    </style>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
   </head>
   <body class="min-h-screen">
     <!-- Cover Page -->
-    <section
-      id="cover-page"
-      class="fixed inset-0 z-50 bg-gradient-to-br from-indigo-600 to-blue-900"
-    >
-      <div class="min-h-screen w-full flex items-center justify-center">
-        <div
-          class="text-center text-white p-8 max-w-3xl mx-auto"
-          data-aos="fade-up"
-          data-aos-duration="1000"
-        >
-          <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-8">
-            Undangan Wisuda
-          </h1>
-          <p class="text-xl md:text-2xl mb-4 opacity-90">
-            Dengan hormat, kami mengundang
-          </p>
-          <p
-            id="cover-nama-tamu"
-            class="text-2xl md:text-3xl font-semibold mb-12"
+    <section id="cover-page" class="fixed inset-0 z-50">
+      <!-- Academic Watermark -->
+      <div class="academic-watermark">
+        <i class="fas fa-graduation-cap"></i>
+      </div>
+
+      <div
+        class="relative min-h-screen w-full flex items-center justify-center px-4"
+      >
+        <div class="w-full max-w-4xl mx-auto">
+          <!-- Content Container -->
+          <div
+            class="glass-card p-4 md:p-6 diploma-border text-center"
+            data-aos="fade-up"
+            data-aos-duration="1000"
           >
-            Kepada Yth. Tamu Undangan
-          </p>
-          <div class="mb-12 space-y-2">
-            <h2 class="text-3xl md:text-4xl font-playfair font-bold">
-              Akbar Wijaya, S.Kom
-            </h2>
-            <p class="text-xl opacity-90">Program Studi: Informatika</p>
-            <p class="text-xl opacity-90">
-              Universitas Teknologi Digital Indonesia
-            </p>
+            <!-- University Emblem -->
+            <div class="flex justify-center mb-4" data-aos="zoom-in">
+              <div class="relative">
+                <div class="text-center">
+                  <div class="flex justify-center items-center">
+                    <i class="fas fa-award text-6xl text-gold"></i>
+                  </div>
+                  <div class="text-xs uppercase tracking-widest text-gold mt-2">
+                    Est. 2025
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Ornamental Header -->
+            <div class="flex items-center justify-center mb-3">
+              <div class="h-px w-12 bg-gold opacity-50"></div>
+              <div class="mx-4 text-gold">
+                <i class="fas fa-graduation-cap rotating-cap"></i>
+              </div>
+              <div class="h-px w-12 bg-gold opacity-50"></div>
+            </div>
+
+            <div class="text-center mb-4">
+              <h1
+                class="formal-title text-4xl md:text-5xl font-bold mb-2"
+                data-aos="fade-down"
+                data-aos-delay="200"
+              >
+                Undangan Wisuda
+              </h1>
+
+              <div class="w-20 h-1 bg-gold mx-auto mb-3"></div>
+
+              <p
+                class="ornamental-initial text-lg md:text-xl mb-2 text-cream opacity-90 font-light"
+                data-aos="fade-up"
+                data-aos-delay="300"
+              >
+                Dengan hormat, kami mengundang
+              </p>
+
+              <p
+                id="cover-nama-tamu"
+                class="text-xl md:text-2xl font-semibold mb-3 text-gold"
+                data-aos="zoom-in"
+                data-aos-delay="400"
+              >
+                Kepada Yth. Tamu Undangan
+              </p>
+            </div>
+
+            <!-- Academic Icons -->
+            <div class="flex justify-center space-x-6 my-3">
+              <div
+                class="text-center scroll-icon"
+                data-aos="fade-right"
+                data-aos-delay="450"
+              >
+                <i class="fas fa-scroll text-3xl text-gold"></i>
+                <p class="text-xs text-cream mt-1">IJAZAH</p>
+              </div>
+              <div class="text-center" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-graduation-cap text-3xl text-gold"></i>
+                <p class="text-xs text-cream mt-1">WISUDA</p>
+              </div>
+              <div
+                class="text-center laurel-icon"
+                data-aos="fade-left"
+                data-aos-delay="550"
+              >
+                <i class="fas fa-award text-3xl text-gold"></i>
+                <p class="text-xs text-cream mt-1">PRESTASI</p>
+              </div>
+            </div>
+
+            <div
+              class="mb-6 border-2 border-gold/30 rounded-lg p-3 text-center"
+              data-aos="fade-up"
+              data-aos-delay="600"
+            >
+              <h2
+                class="text-2xl md:text-3xl font-bold text-gold tracking-wide mb-2"
+              >
+                Akbar Wijaya, S.Kom
+              </h2>
+              <p class="text-xl text-cream opacity-80 font-light mb-2">
+                Program Studi: Informatika
+              </p>
+              <p class="text-xl text-cream opacity-80 font-light">
+                Universitas Teknologi Digital Indonesia
+              </p>
+            </div>
+
+            <!-- Ornamental Divider -->
+            <div
+              class="flex items-center justify-center my-4"
+              data-aos="fade"
+              data-aos-delay="700"
+            >
+              <div class="h-px w-16 bg-gold opacity-50"></div>
+              <div class="mx-4 text-gold text-xs tracking-widest">MMXXV</div>
+              <div class="h-px w-16 bg-gold opacity-50"></div>
+            </div>
+
+            <button
+              id="open-invitation"
+              class="pulse-button px-8 py-4 rounded-lg font-bold text-lg transform transition duration-300 hover:scale-105 hover:shadow-lg flex items-center justify-center gap-2 mx-auto"
+            >
+              <span>Buka Undangan</span>
+              <i class="fas fa-envelope-open-text"></i>
+            </button>
           </div>
-          <button
-            id="open-invitation"
-            class="bg-white text-indigo-800 px-8 py-3 rounded-lg font-bold text-lg transform transition duration-300 hover:scale-105 hover:shadow-lg"
-          >
-            Buka Undangan
-          </button>
         </div>
       </div>
     </section>
@@ -72,17 +162,11 @@
     >
       <div
         class="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20"
-        data-aos="fade-up"
-        data-aos-duration="800"
       >
         <!-- Header Section -->
-        <header
-          class="mb-16 sm:mb-20 md:mb-24 lg:mb-32"
-          data-aos="fade-down"
-          data-aos-duration="1000"
-        >
+        <header class="mb-16 sm:mb-20" data-aos="fade-up">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-indigo-900 mb-6 sm:mb-8"
+            class="text-4xl sm:text-5xl md:text-6xl font-bold text-indigo-900 mb-6 section-title"
           >
             Undangan Wisuda
           </h1>
@@ -91,74 +175,65 @@
           </p>
           <p
             id="nama-tamu"
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-indigo-900 mt-4"
-            data-aos="zoom-in"
-            data-aos-delay="200"
+            class="text-2xl sm:text-3xl md:text-4xl font-semibold text-indigo-900 mt-4"
           >
             Kepada Yth. Tamu Undangan
           </p>
         </header>
 
         <!-- Wisudawan Info Section -->
-        <section
-          class="mb-20 sm:mb-24 md:mb-28 lg:mb-32"
-          data-aos="fade-up"
-          data-aos-delay="400"
-        >
-          <h2
-            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-800 mb-6"
-          >
-            Akbar Wijaya, S.Kom
-          </h2>
-          <div class="text-lg sm:text-xl md:text-2xl text-indigo-700 space-y-2">
-            <p>Program Studi: Informatika</p>
-            <p>Universitas Teknologi Digital Indonesia</p>
+        <section class="mb-16 sm:mb-20">
+          <div class="max-w-3xl mx-auto p-6 content-card" data-aos="fade-up">
+            <h2
+              class="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-800 mb-6 section-title"
+            >
+              Akbar Wijaya, S.Kom
+            </h2>
+            <div class="text-lg sm:text-xl text-indigo-700 space-y-2">
+              <p>Program Studi: Informatika</p>
+              <p>Universitas Teknologi Digital Indonesia</p>
+            </div>
           </div>
         </section>
 
         <!-- Event Details Section -->
-        <section
-          class="max-w-4xl mx-auto mb-20 sm:mb-24 md:mb-28 lg:mb-32"
-          data-aos="fade-up"
-          data-aos-delay="600"
-        >
-          <h3
-            class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-indigo-800 mb-8 sm:mb-10"
-          >
-            Detail Acara
-          </h3>
-          <div
-            class="space-y-4 sm:space-y-6 text-lg sm:text-xl md:text-2xl text-indigo-700"
-          >
-            <p>
-              <span class="font-bold">Hari, Tanggal:</span> Sabtu, 27 Juli 2025
-            </p>
-            <p><span class="font-bold">Waktu:</span> 08.00 WIB</p>
-            <p>
-              <span class="font-bold">Lokasi:</span><br />
-              Auditorium Utama<br />
-              Universitas Teknologi Digital Indonesia<br />
-              Jl. Teknologi No. 10, Yogyakarta
-            </p>
-            <p>
-              <span class="font-bold">Jenis Acara:</span> Upacara Wisuda &
-              Syukuran
-            </p>
+        <section class="max-w-4xl mx-auto mb-16 sm:mb-20">
+          <div class="content-card p-8" data-aos="fade-up">
+            <h3
+              class="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-800 mb-8 section-title"
+            >
+              Detail Acara
+            </h3>
+            <div
+              class="space-y-4 text-lg sm:text-xl text-indigo-700 detail-list"
+            >
+              <p>
+                <span class="font-bold">Hari, Tanggal:</span> Sabtu, 27 Juli
+                2025
+              </p>
+              <p><span class="font-bold">Waktu:</span> 08.00 WIB</p>
+              <p>
+                <span class="font-bold">Lokasi:</span><br />
+                Auditorium Utama<br />
+                Universitas Teknologi Digital Indonesia<br />
+                Jl. Teknologi No. 10, Yogyakarta
+              </p>
+              <p>
+                <span class="font-bold">Jenis Acara:</span> Upacara Wisuda &
+                Syukuran
+              </p>
+            </div>
           </div>
         </section>
 
         <!-- RSVP Form Section -->
-        <section
-          class="max-w-2xl mx-auto bg-white/30 backdrop-blur-sm p-8 sm:p-10 md:p-12 lg:p-16 rounded-lg"
-          data-aos="fade-up"
-          data-aos-delay="800"
-        >
+        <section class="max-w-2xl mx-auto content-card p-8" data-aos="fade-up">
           <h3
-            class="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-800 mb-8"
+            class="text-2xl sm:text-3xl font-bold text-indigo-800 mb-6 section-title"
           >
             Konfirmasi Kehadiran
           </h3>
-          <form id="rsvp-form" class="space-y-6 sm:space-y-8">
+          <form id="rsvp-form" class="space-y-4 sm:space-y-6">
             <div>
               <label
                 for="nama_rsvp"
@@ -169,7 +244,7 @@
                 type="text"
                 id="nama_rsvp"
                 name="nama"
-                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors"
+                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
                 required
               />
             </div>
@@ -182,7 +257,7 @@
               <select
                 id="kehadiran"
                 name="kehadiran"
-                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors"
+                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
                 required
               >
                 <option value="">Pilih Kehadiran</option>
@@ -200,13 +275,13 @@
                 id="ucapan"
                 name="ucapan"
                 rows="4"
-                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors"
+                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
                 placeholder="Berikan ucapan selamat atau doa terbaik Anda..."
               ></textarea>
             </div>
             <button
               type="submit"
-              class="w-full sm:w-auto px-8 py-4 text-lg sm:text-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+              class="w-full sm:w-auto px-8 py-4 text-lg sm:text-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 submit-button"
             >
               Kirim Konfirmasi
             </button>
@@ -218,13 +293,41 @@
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
+      // Initialize AOS with modified settings
       AOS.init({
-        duration: 800,
-        once: false,
-        mirror: true,
+        duration: 600,
+        once: true,
+        mirror: false,
         offset: 50,
+        delay: 0,
+        easing: "ease-out",
+        startEvent: "load",
+      });
+
+      // Disable animations when scrolling up
+      let lastScrollTop = 0;
+      window.addEventListener("scroll", function () {
+        let st = window.pageYOffset || document.documentElement.scrollTop;
+        if (st > lastScrollTop) {
+          // Scrolling down - enable animations
+          document.querySelectorAll("[data-aos]").forEach((el) => {
+            el.style.transitionDuration = "600ms";
+          });
+        } else {
+          // Scrolling up - disable animations
+          document.querySelectorAll("[data-aos]").forEach((el) => {
+            el.style.transitionDuration = "0ms";
+          });
+        }
+        lastScrollTop = st <= 0 ? 0 : st;
+      });
+
+      // Refresh AOS on load
+      document.addEventListener("DOMContentLoaded", function () {
+        AOS.refresh();
       });
     </script>
+    <script src="./public/js/confetti.js"></script>
     <script src="./public/js/script.js"></script>
   </body>
 </html>
