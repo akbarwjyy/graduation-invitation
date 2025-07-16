@@ -8,22 +8,76 @@ document.addEventListener("DOMContentLoaded", () => {
   const rsvpForm = document.getElementById("rsvp-form");
   const rsvpMessage = document.getElementById("rsvp-message");
 
-  // Handle opening invitation
-  openInvitationBtn.addEventListener("click", () => {
-    // Fade out cover
-    coverPage.style.transition = "opacity 1s ease-in-out";
-    coverPage.style.opacity = "0";
+  let isOpening = false;
 
-    // Show main content with fade-in
-    mainContent.style.transition = "opacity 1s ease-in-out";
+  // Function to open invitation
+  const openInvitation = () => {
+    if (isOpening) return;
+    isOpening = true;
+
+    // Fade out cover
+    coverPage.style.transition =
+      "opacity 1s ease-in-out, transform 1s ease-out";
+    coverPage.style.opacity = "0";
+    coverPage.style.transform = "translateY(-100%)";
+
+    // Prepare main content for fade-up animation
+    mainContent.style.transform = "translateY(20px)";
+    mainContent.style.transition =
+      "opacity 1s ease-in-out, transform 1s ease-out";
     mainContent.style.opacity = "1";
     mainContent.style.pointerEvents = "auto";
+
+    // Add fade-up effect
+    setTimeout(() => {
+      mainContent.style.transform = "translateY(0)";
+    }, 100);
 
     // Remove cover after animation
     setTimeout(() => {
       coverPage.style.display = "none";
     }, 1000);
-  });
+  };
+
+  // Handle button click
+  openInvitationBtn.addEventListener("click", openInvitation);
+
+  // Handle mouse wheel on cover
+  coverPage.addEventListener(
+    "wheel",
+    (event) => {
+      if (event.deltaY > 0) {
+        // Scrolling down
+        openInvitation();
+      }
+    },
+    { passive: true }
+  );
+
+  // Handle touch events for mobile
+  let touchStartY = 0;
+
+  coverPage.addEventListener(
+    "touchstart",
+    (event) => {
+      touchStartY = event.touches[0].clientY;
+    },
+    { passive: true }
+  );
+
+  coverPage.addEventListener(
+    "touchmove",
+    (event) => {
+      const touchEndY = event.touches[0].clientY;
+      const deltaY = touchStartY - touchEndY;
+
+      if (deltaY > 50) {
+        // threshold of 50px for swipe up
+        openInvitation();
+      }
+    },
+    { passive: true }
+  );
 
   // Fungsi untuk mendapatkan parameter URL
   function getQueryParam(param) {
@@ -33,12 +87,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Ambil ID dari URL
   const tamuId = getQueryParam("id");
-
-  // --- Konfigurasi Google Spreadsheet API ---
-  // Anda bisa menggunakan Sheet.best, Google Apps Script, atau service lainnya.
-  // Contoh menggunakan Google Apps Script sebagai API endpoint.
-  // Ganti URL_GOOGLE_APPS_SCRIPT_API_ANDA dengan URL API yang sudah Anda deploy.
-  const GOOGLE_SHEET_API_URL = "URL_GOOGLE_APPS_SCRIPT_API_ANDA"; // Contoh: https://script.google.com/macros/s/AKfycbz_XXXXXXXXXXXXXXX/exec
 
   // Fungsi untuk mengambil nama tamu dari Google Spreadsheet
   async function getNamaTamu(id) {
@@ -50,8 +98,6 @@ document.addEventListener("DOMContentLoaded", () => {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
-      // Asumsikan respons API adalah objek { nama: "Nama Tamu" }
-      // Atau sesuaikan dengan struktur respons API Anda
       return data.nama || null;
     } catch (error) {
       console.error("Error fetching guest name:", error);
@@ -79,14 +125,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   displayNamaTamu();
 
-  // --- Fungsi untuk mengirim RSVP (Bonus Opsional) ---
-  // Ganti URL_RSVP_ENDPOINT_ANDA dengan endpoint API untuk RSVP
-  const RSVP_ENDPOINT_URL = "URL_RSVP_ENDPOINT_ANDA"; // Contoh: https://script.google.com/macros/s/AKfycbz_YYYYYYYYYYYYYYY/exec
-
+  // Handle RSVP form
   if (rsvpForm) {
     rsvpForm.addEventListener("submit", async (event) => {
       event.preventDefault();
-
       const formData = new FormData(rsvpForm);
       const data = Object.fromEntries(formData.entries());
 

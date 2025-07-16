@@ -39,8 +39,9 @@
   </head>
   <body class="min-h-screen">
     <!-- Cover Page -->
-    <section id="cover-page" class="fixed inset-0 z-50 bg-gradient-to-br from-indigo-600 to-blue-900 flex items-center justify-center">
-      <div class="text-center text-white p-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
+    <section id="cover-page" class="fixed inset-0 z-50 bg-gradient-to-br from-indigo-600 to-blue-900">
+      <div class="min-h-screen w-full flex items-center justify-center">
+        <div class="text-center text-white p-8 max-w-3xl mx-auto" data-aos="fade-up" data-aos-duration="1000">
         <h1 class="text-5xl md:text-6xl font-playfair font-bold mb-8">
           Undangan Wisuda
         </h1>
@@ -69,103 +70,96 @@
     </section>
 
     <!-- Main Content -->
-    <main id="main-content" class="opacity-0 pointer-events-none">
-      <div class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen flex items-center justify-center py-12 px-4">
-        <div
-          class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-2xl w-full text-center border-t-8 border-indigo-600"
+    <main id="main-content" class="opacity-0 pointer-events-none transform translate-y-5 min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 text-center overflow-y-auto">
+      <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20"
       data-aos="fade-up"
       data-aos-duration="800"
     >
-      <h1
-        class="text-4xl md:text-5xl font-bold text-indigo-800 mb-6"
-        data-aos="fade-up"
-        data-aos-delay="200"
-      >
-        Undangan Wisuda
-      </h1>
+      <!-- Header Section -->
+      <header class="mb-16 sm:mb-20 md:mb-24 lg:mb-32" data-aos="fade-down" data-aos-duration="1000">
+        <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-indigo-900 mb-6 sm:mb-8">
+          Undangan Wisuda
+        </h1>
+        <p class="text-lg sm:text-xl md:text-2xl text-indigo-800 opacity-90">
+          Dengan hormat, kami mengundang
+        </p>
+        <p id="nama-tamu" 
+           class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-indigo-900 mt-4"
+           data-aos="zoom-in" data-aos-delay="200">
+          Kepada Yth. Tamu Undangan
+        </p>
+      </header>
 
-      <p
-        class="text-gray-700 text-lg mb-2"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
-        Dengan hormat, kami mengundang
-      </p>
-      <p
-        class="text-gray-900 text-xl md:text-2xl font-semibold mb-8"
-        id="nama-tamu"
-        data-aos="zoom-in"
-        data-aos-delay="600"
-      >
-        Kepada Yth. Tamu Undangan
-      </p>
-
-      <div class="mb-10" data-aos="zoom-in" data-aos-delay="800">
-        <h2 class="text-3xl md:text-4xl font-bold text-indigo-700 mb-4">
+      <!-- Wisudawan Info Section -->
+      <section class="mb-20 sm:mb-24 md:mb-28 lg:mb-32" data-aos="fade-up" data-aos-delay="400">
+        <h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-indigo-800 mb-6">
           Akbar Wijaya, S.Kom
         </h2>
-        <p class="text-gray-600 text-lg">Program Studi: Informatika</p>
-        <p class="text-gray-600 text-lg">
-          Universitas Teknologi Digital Indonesia
-        </p>
-      </div>
+        <div class="text-lg sm:text-xl md:text-2xl text-indigo-700 space-y-2">
+          <p>Program Studi: Informatika</p>
+          <p>Universitas Teknologi Digital Indonesia</p>
+        </div>
+      </section>
 
-      <div
-        class="border-t border-b border-gray-200 py-8 mb-10"
-        data-aos="slide-left"
-        data-aos-duration="800"
-      >
-        <h3 class="text-2xl md:text-3xl font-bold text-indigo-700 mb-6">
+      <!-- Event Details Section -->
+      <section class="max-w-4xl mx-auto mb-20 sm:mb-24 md:mb-28 lg:mb-32" 
+               data-aos="fade-up" data-aos-delay="600">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-indigo-800 mb-8 sm:mb-10">
           Detail Acara
         </h3>
-        <p class="text-gray-700 text-lg mb-2">
-          <span class="font-bold">Hari, Tanggal:</span> Sabtu, 27 Juli 2025
-        </p>
-        <p class="text-gray-700 text-lg mb-2">
-          <span class="font-bold">Waktu:</span> 08.00 WIB
-        </p>
-        <p class="text-gray-700 text-lg mb-2">
-          <span class="font-bold">Lokasi:</span> Auditorium Utama, Universitas
-          Teknologi Digital Indonesia, Jl. Teknologi No. 10, Yogyakarta
-        </p>
-        <p class="text-gray-700 text-lg">
-          <span class="font-bold">Jenis Acara:</span> Upacara Wisuda & Syukuran
-        </p>
-      </div>
+        <div class="space-y-4 sm:space-y-6 text-lg sm:text-xl md:text-2xl text-indigo-700">
+          <p>
+            <span class="font-bold">Hari, Tanggal:</span> Sabtu, 27 Juli 2025
+          </p>
+          <p>
+            <span class="font-bold">Waktu:</span> 08.00 WIB
+          </p>
+          <p>
+            <span class="font-bold">Lokasi:</span><br>
+            Auditorium Utama<br>
+            Universitas Teknologi Digital Indonesia<br>
+            Jl. Teknologi No. 10, Yogyakarta
+          </p>
+          <p>
+            <span class="font-bold">Jenis Acara:</span> Upacara Wisuda & Syukuran
+          </p>
+        </div>
+      </section>
 
-      <div
-        class="mt-10 p-6 bg-indigo-50 rounded-lg shadow-inner"
-        data-aos="fade-up"
-        data-aos-duration="800"
+      <!-- RSVP Form Section -->
+      <section class="max-w-2xl mx-auto bg-white/30 backdrop-blur-sm p-8 sm:p-10 md:p-12 lg:p-16 rounded-lg"
+               data-aos="fade-up" data-aos-delay="800"
       >
-        <h3 class="text-2xl font-bold text-indigo-700 mb-6">
+        <h3 class="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-800 mb-8">
           Konfirmasi Kehadiran
         </h3>
-        <form id="rsvp-form" class="space-y-4">
+        <form id="rsvp-form" class="space-y-6 sm:space-y-8">
           <div>
             <label
               for="nama_rsvp"
-              class="block text-left text-gray-700 text-sm font-bold mb-2"
+              class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
               >Nama Lengkap:</label
             >
             <input
               type="text"
               id="nama_rsvp"
               name="nama"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 
+                     focus:outline-none focus:border-indigo-400 transition-colors"
               required
             />
           </div>
           <div>
             <label
               for="kehadiran"
-              class="block text-left text-gray-700 text-sm font-bold mb-2"
+              class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
               >Kehadiran:</label
             >
             <select
               id="kehadiran"
               name="kehadiran"
-              class="shadow border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50
+                     focus:outline-none focus:border-indigo-400 transition-colors"
               required
             >
               <option value="">Pilih Kehadiran</option>
@@ -176,27 +170,32 @@
           <div>
             <label
               for="ucapan"
-              class="block text-left text-gray-700 text-sm font-bold mb-2"
+              class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
               >Ucapan/Doa:</label
             >
             <textarea
               id="ucapan"
               name="ucapan"
               rows="4"
-              class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50
+                     focus:outline-none focus:border-indigo-400 transition-colors"
               placeholder="Berikan ucapan selamat atau doa terbaik Anda..."
             ></textarea>
           </div>
           <button
             type="submit"
-            class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-6 rounded-lg focus:outline-none focus:shadow-outline transition duration-300 ease-in-out"
+            class="w-full sm:w-auto px-8 py-4 text-lg sm:text-xl font-bold text-white 
+                   bg-indigo-600 hover:bg-indigo-700 rounded-lg 
+                   transform transition-all duration-300 hover:scale-105 
+                   focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
           >
             Kirim Konfirmasi
           </button>
         </form>
-        <p id="rsvp-message" class="mt-4 text-sm text-green-700 hidden"></p>
+        <p id="rsvp-message" class="mt-6 text-lg font-semibold hidden"></p>
+      </section>
       </div>
-    </div>
+    </main>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
