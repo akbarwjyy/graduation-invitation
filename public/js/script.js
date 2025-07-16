@@ -1,3 +1,6 @@
+// Import data from data.js
+import { data } from "./data.js";
+
 document.addEventListener("DOMContentLoaded", () => {
   // Elements
   const coverPage = document.getElementById("cover-page");
@@ -8,9 +11,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const rsvpForm = document.getElementById("rsvp-form");
   const rsvpMessage = document.getElementById("rsvp-message");
 
-  // API URLs (placeholder - ganti dengan URL API Anda yang sebenarnya)
-  const GOOGLE_SHEET_API_URL = "https://example.com/api";
-  const RSVP_ENDPOINT_URL = "https://example.com/rsvp";
+  // Populate content from data.js
+  populateContent();
 
   let isOpening = false;
 
@@ -113,36 +115,152 @@ document.addEventListener("DOMContentLoaded", () => {
       const namaTamu = await getNamaTamu(tamuId);
       const displayText = namaTamu
         ? `Kepada Yth. ${namaTamu}`
-        : "Kepada Yth. Tamu Undangan";
+        : data.text.guest;
 
       // Update both cover and main content
       coverNamaTamuElement.textContent = displayText;
       namaTamuElement.textContent = displayText;
     } else {
-      const defaultText = "Kepada Yth. Tamu Undangan";
-      coverNamaTamuElement.textContent = defaultText;
-      namaTamuElement.textContent = defaultText;
+      coverNamaTamuElement.textContent = data.text.guest;
+      namaTamuElement.textContent = data.text.guest;
     }
   }
 
+  // Function to populate content from data.js
+  function populateContent() {
+    // Populate cover page
+    document.querySelectorAll(".formal-title").forEach((el) => {
+      el.textContent = data.text.title;
+    });
+
+    document.querySelectorAll(".ornamental-initial").forEach((el) => {
+      el.textContent = data.text.invitation;
+    });
+
+    // Populate graduate info
+    const graduateNameElements = document.querySelectorAll(".graduate-name");
+    graduateNameElements.forEach((el) => {
+      el.textContent = `${data.graduate.name}, ${data.graduate.degree}`;
+    });
+
+    document.querySelectorAll(".graduate-major").forEach((el) => {
+      el.textContent = `Program Studi: ${data.graduate.major}`;
+    });
+
+    document.querySelectorAll(".graduate-university").forEach((el) => {
+      el.textContent = data.graduate.university;
+    });
+
+    // Populate event details
+    document.querySelectorAll(".event-date").forEach((el) => {
+      el.textContent = `${data.event.ceremony.day}, ${data.event.ceremony.date} ${data.event.ceremony.month} ${data.event.ceremony.year}`;
+    });
+
+    document.querySelectorAll(".event-time").forEach((el) => {
+      el.textContent = `${data.event.ceremony.time.start} WIB`;
+    });
+
+    document.querySelectorAll(".event-location").forEach((el) => {
+      el.innerHTML = `${data.event.location}<br>${data.event.address}`;
+    });
+
+    document.querySelectorAll(".event-type").forEach((el) => {
+      el.textContent = data.event.type;
+    });
+
+    // Populate RSVP form
+    document.querySelectorAll(".rsvp-title").forEach((el) => {
+      el.textContent = data.text.rsvpTitle;
+    });
+
+    // Populate button text
+    document.querySelector("#open-invitation span").textContent =
+      data.text.openButton;
+
+    // Populate academic icons
+    const iconsContainer = document.querySelector(".academic-icons");
+    if (iconsContainer) {
+      iconsContainer.innerHTML = "";
+      data.academicIcons.forEach((icon) => {
+        const iconDiv = document.createElement("div");
+        iconDiv.className = `text-center ${
+          icon.id === 1 ? "scroll-icon" : icon.id === 3 ? "laurel-icon" : ""
+        }`;
+        iconDiv.setAttribute("data-aos", icon.animation);
+        iconDiv.setAttribute("data-aos-delay", icon.delay);
+
+        iconDiv.innerHTML = `
+          <i class="fas ${icon.icon} text-3xl text-gold"></i>
+          <p class="text-xs text-cream mt-1">${icon.label}</p>
+        `;
+
+        iconsContainer.appendChild(iconDiv);
+      });
+    }
+  }
+
+  // Call displayNamaTamu after populating content
   displayNamaTamu();
 
   // Handle RSVP form
   if (rsvpForm) {
+    // Populate select options
+    const kehadiranSelect = document.getElementById("kehadiran");
+    if (kehadiranSelect) {
+      // Clear existing options except the first one
+      while (kehadiranSelect.options.length > 1) {
+        kehadiranSelect.remove(1);
+      }
+
+      // Add options from data
+      data.rsvp.options.forEach((option) => {
+        const optionEl = document.createElement("option");
+        optionEl.value = option.value;
+        optionEl.textContent = option.label;
+        kehadiranSelect.appendChild(optionEl);
+      });
+    }
+
+    // Update form labels and placeholders
+    document.querySelector('label[for="nama_rsvp"]').textContent =
+      data.text.rsvpName;
+    document.querySelector('label[for="kehadiran"]').textContent =
+      data.text.rsvpAttendance;
+    document.querySelector('label[for="ucapan"]').textContent =
+      data.text.rsvpMessage;
+    document.querySelector("#ucapan").placeholder = data.text.rsvpPlaceholder;
+    document.querySelector('button[type="submit"]').textContent =
+      data.text.rsvpSubmit;
+
     rsvpForm.addEventListener("submit", async (event) => {
       event.preventDefault();
       const formData = new FormData(rsvpForm);
-      const data = Object.fromEntries(formData.entries());
+      const formDataObj = Object.fromEntries(formData.entries());
 
-      // Demo: Tampilkan data di console dan berikan respons sukses
-      console.log("Form data submitted:", data);
+      try {
+        // Demo: Tampilkan data di console dan berikan respons sukses
+        console.log("Form data submitted:", formDataObj);
 
-      // Simulasi sukses
-      rsvpMessage.textContent =
-        "Terima kasih, konfirmasi kehadiran Anda telah terkirim!";
-      rsvpMessage.classList.remove("hidden");
-      rsvpMessage.classList.add("text-green-700");
-      rsvpForm.reset();
+        // In a real implementation, you would send data to the endpoint
+        // const response = await fetch(data.rsvp.endpoint, {
+        //   method: 'POST',
+        //   body: JSON.stringify(formDataObj),
+        //   headers: {
+        //     'Content-Type': 'application/json'
+        //   }
+        // });
+
+        // Simulasi sukses
+        rsvpMessage.textContent = data.text.rsvpSuccess;
+        rsvpMessage.classList.remove("hidden");
+        rsvpMessage.classList.add("text-green-700");
+        rsvpForm.reset();
+      } catch (error) {
+        console.error("Error submitting form:", error);
+        rsvpMessage.textContent = data.text.rsvpError;
+        rsvpMessage.classList.remove("hidden");
+        rsvpMessage.classList.add("text-red-700");
+      }
     });
   }
 });
