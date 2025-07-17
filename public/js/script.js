@@ -128,6 +128,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Function to populate content from data.js
   function populateContent() {
+    // Set university logo if available
+    if (data.universityLogo) {
+      const logoContainers = document.querySelectorAll('.university-logo');
+      logoContainers.forEach(container => {
+        if (container.tagName === 'IMG') {
+          container.src = data.universityLogo;
+          container.alt = data.graduate.university;
+        } else {
+          const img = document.createElement('img');
+          img.src = data.universityLogo;
+          img.alt = data.graduate.university;
+          img.className = 'university-logo-img';
+          container.appendChild(img);
+        }
+      });
+    }
     // Populate cover page
     document.querySelectorAll(".formal-title").forEach((el) => {
       el.textContent = data.text.title;

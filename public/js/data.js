@@ -8,6 +8,9 @@ export const data = {
     image: "./public/images/graduate.jpg",
   },
 
+  // Logo universitas
+  universityLogo: "./public/assets/img/logo-utdi.png",
+
   event: {
     ceremony: {
       year: "2025",
@@ -26,8 +29,9 @@ export const data = {
   },
 
   links: {
-    calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=20250727T010000Z/20250727T050000Z&text=Wisuda%20Akbar%20Wijaya&location=Universitas%20Teknologi%20Digital%20Indonesia&details=Acara%20Wisuda%20Akbar%20Wijaya%2C%20S.Kom",
-    map: "https://maps.google.com/?q=Universitas+Teknologi+Digital+Indonesia",
+    calendar:
+      "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=20250727T010000Z/20250727T050000Z&text=Wisuda%20Akbar%20Wijaya&location=Universitas%20Teknologi%20Digital%20Indonesia&details=Acara%20Wisuda%20Akbar%20Wijaya%2C%20S.Kom",
+    map: "https://maps.app.goo.gl/RxbMyNQz5GSUc1yZ8",
   },
 
   gallery: [
