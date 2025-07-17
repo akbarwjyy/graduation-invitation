@@ -143,9 +143,7 @@ document.addEventListener("DOMContentLoaded", () => {
       el.textContent = `${data.graduate.name}, ${data.graduate.degree}`;
     });
 
-    document.querySelectorAll(".graduate-major").forEach((el) => {
-      el.textContent = `Program Studi: ${data.graduate.major}`;
-    });
+    // Program studi telah dihapus
 
     document.querySelectorAll(".graduate-university").forEach((el) => {
       el.textContent = data.graduate.university;

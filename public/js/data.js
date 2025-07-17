@@ -4,7 +4,6 @@ export const data = {
     id: 1,
     name: "Akbar Wijaya",
     degree: "S.Kom",
-    major: "Informatika",
     university: "Universitas Teknologi Digital Indonesia",
     image: "./public/images/graduate.jpg",
   },
@@ -27,7 +26,7 @@ export const data = {
   },
 
   links: {
-    calendar: "https://calendar.google.com/event?...",
+    calendar: "https://calendar.google.com/calendar/event?action=TEMPLATE&dates=20250727T010000Z/20250727T050000Z&text=Wisuda%20Akbar%20Wijaya&location=Universitas%20Teknologi%20Digital%20Indonesia&details=Acara%20Wisuda%20Akbar%20Wijaya%2C%20S.Kom",
     map: "https://maps.google.com/?q=Universitas+Teknologi+Digital+Indonesia",
   },
 

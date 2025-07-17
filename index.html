@@ -8,6 +8,7 @@
     <link href="./public/css/inline-styles.css" rel="stylesheet" />
     <link href="./public/css/compact-layout.css" rel="stylesheet" />
     <link href="./public/css/main-content.css" rel="stylesheet" />
+    <link href="./public/css/time.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -124,11 +125,7 @@
               >
                 Akbar Wijaya, S.Kom
               </h2>
-              <p
-                class="text-xl text-cream opacity-80 font-light mb-2 graduate-major"
-              >
-                Program Studi: Informatika
-              </p>
+
               <p
                 class="text-xl text-cream opacity-80 font-light graduate-university"
               >
@@ -164,17 +161,17 @@
       id="main-content"
       class="opacity-0 pointer-events-none transform translate-y-5 min-h-screen bg-gradient-to-br from-blue-100 to-indigo-200 text-center overflow-y-auto"
     >
-      <div
-        class="w-full max-w-6xl mx-auto px-4 sm:px-6 md:px-8 lg:px-16 py-8 sm:py-12 md:py-16 lg:py-20"
-      >
+      <div class="w-full max-w-4xl mx-auto px-4 sm:px-6 md:px-8 py-8 sm:py-12">
         <!-- Header Section -->
         <header class="mb-16 sm:mb-20" data-aos="fade-up">
           <h1
-            class="text-4xl sm:text-5xl md:text-6xl font-bold text-indigo-900 mb-6 section-title"
+            class="formal-title text-4xl sm:text-5xl md:text-6xl font-bold text-indigo-900 mb-6 section-title"
           >
             Undangan Wisuda
           </h1>
-          <p class="text-lg sm:text-xl md:text-2xl text-indigo-800 opacity-90">
+          <p
+            class="ornamental-initial text-lg sm:text-xl md:text-2xl text-indigo-800 opacity-90"
+          >
             Dengan hormat, kami mengundang
           </p>
           <p
@@ -187,21 +184,44 @@
 
         <!-- Wisudawan Info Section -->
         <section class="mb-16 sm:mb-20">
-          <div class="max-w-3xl mx-auto p-6 content-card" data-aos="fade-up">
+          <div class="w-full p-6 content-card" data-aos="fade-up">
             <h2
-              class="text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-800 mb-6 section-title"
+              class="graduate-name text-3xl sm:text-4xl md:text-5xl font-bold text-indigo-800 mb-6 section-title"
             >
               Akbar Wijaya, S.Kom
             </h2>
-            <div class="text-lg sm:text-xl text-indigo-700 space-y-2">
-              <p>Program Studi: Informatika</p>
-              <p>Universitas Teknologi Digital Indonesia</p>
+            <div class="text-lg sm:text-xl text-indigo-700">
+              <p class="graduate-university">
+                Universitas Teknologi Digital Indonesia
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- Time Section -->
+        <section class="time mb-16 sm:mb-20">
+          <div class="time-container">
+            <div class="time-box"></div>
+          </div>
+          <div class="type-container">
+            <div class="type-box"></div>
+          </div>
+          <div id="countdown" class="countdown"></div>
+          <div class="location-container">
+            <p class="address"></p>
+            <div class="links-container">
+              <a class="map-link" target="_blank"
+                ><i class="fas fa-map-marker-alt"></i> Lihat Lokasi</a
+              >
+              <a class="calendar-link" target="_blank"
+                ><i class="fas fa-calendar-alt"></i> Tambahkan ke Kalender</a
+              >
             </div>
           </div>
         </section>
 
         <!-- Event Details Section -->
-        <section class="max-w-4xl mx-auto mb-16 sm:mb-20">
+        <section class="mb-16 sm:mb-20">
           <div class="content-card p-8" data-aos="fade-up">
             <h3
               class="text-2xl sm:text-3xl md:text-4xl font-bold text-indigo-800 mb-8 section-title"
@@ -236,66 +256,68 @@
         </section>
 
         <!-- RSVP Form Section -->
-        <section class="max-w-2xl mx-auto content-card p-8" data-aos="fade-up">
-          <h3
-            class="text-2xl sm:text-3xl font-bold text-indigo-800 mb-6 section-title rsvp-title"
-          >
-            Konfirmasi Kehadiran
-          </h3>
-          <form id="rsvp-form" class="space-y-4 sm:space-y-6">
-            <div>
-              <label
-                for="nama_rsvp"
-                class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
-                >Nama Lengkap:</label
-              >
-              <input
-                type="text"
-                id="nama_rsvp"
-                name="nama"
-                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
-                required
-              />
-            </div>
-            <div>
-              <label
-                for="kehadiran"
-                class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
-                >Kehadiran:</label
-              >
-              <select
-                id="kehadiran"
-                name="kehadiran"
-                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
-                required
-              >
-                <option value="">Pilih Kehadiran</option>
-                <option value="hadir">Akan Hadir</option>
-                <option value="tidak hadir">Tidak Dapat Hadir</option>
-              </select>
-            </div>
-            <div>
-              <label
-                for="ucapan"
-                class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
-                >Ucapan/Doa:</label
-              >
-              <textarea
-                id="ucapan"
-                name="ucapan"
-                rows="4"
-                class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
-                placeholder="Berikan ucapan selamat atau doa terbaik Anda..."
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              class="w-full sm:w-auto px-8 py-4 text-lg sm:text-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 submit-button"
+        <section class="mb-16 sm:mb-20">
+          <div class="content-card p-8" data-aos="fade-up">
+            <h3
+              class="text-2xl sm:text-3xl font-bold text-indigo-800 mb-6 section-title"
             >
-              Kirim Konfirmasi
-            </button>
-          </form>
-          <p id="rsvp-message" class="mt-6 text-lg font-semibold hidden"></p>
+              Konfirmasi Kehadiran
+            </h3>
+            <form id="rsvp-form" class="space-y-4 sm:space-y-6 rsvp-form">
+              <div>
+                <label
+                  for="nama_rsvp"
+                  class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
+                  >Nama Lengkap:</label
+                >
+                <input
+                  type="text"
+                  id="nama_rsvp"
+                  name="nama"
+                  class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
+                  required
+                />
+              </div>
+              <div>
+                <label
+                  for="kehadiran"
+                  class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
+                  >Kehadiran:</label
+                >
+                <select
+                  id="kehadiran"
+                  name="kehadiran"
+                  class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
+                  required
+                >
+                  <option value="">Pilih Kehadiran</option>
+                  <option value="hadir">Akan Hadir</option>
+                  <option value="tidak hadir">Tidak Dapat Hadir</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  for="ucapan"
+                  class="block text-left text-indigo-700 text-lg sm:text-xl font-semibold mb-2"
+                  >Ucapan/Doa:</label
+                >
+                <textarea
+                  id="ucapan"
+                  name="ucapan"
+                  rows="4"
+                  class="w-full p-3 sm:p-4 text-lg border-2 border-indigo-200 rounded-lg bg-white/50 focus:outline-none focus:border-indigo-400 transition-colors form-input"
+                  placeholder="Berikan ucapan selamat atau doa terbaik Anda..."
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full sm:w-auto px-8 py-4 text-lg sm:text-xl font-bold text-white bg-indigo-600 hover:bg-indigo-700 rounded-lg transform transition-all duration-300 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 submit-button"
+              >
+                Kirim Konfirmasi
+              </button>
+            </form>
+            <p id="rsvp-message" class="mt-6 text-lg font-semibold hidden"></p>
+          </div>
         </section>
       </div>
     </main>
@@ -313,24 +335,6 @@
         startEvent: "load",
       });
 
-      // Disable animations when scrolling up
-      let lastScrollTop = 0;
-      window.addEventListener("scroll", function () {
-        let st = window.pageYOffset || document.documentElement.scrollTop;
-        if (st > lastScrollTop) {
-          // Scrolling down - enable animations
-          document.querySelectorAll("[data-aos]").forEach((el) => {
-            el.style.transitionDuration = "600ms";
-          });
-        } else {
-          // Scrolling up - disable animations
-          document.querySelectorAll("[data-aos]").forEach((el) => {
-            el.style.transitionDuration = "0ms";
-          });
-        }
-        lastScrollTop = st <= 0 ? 0 : st;
-      });
-
       // Refresh AOS on load
       document.addEventListener("DOMContentLoaded", function () {
         AOS.refresh();
@@ -338,5 +342,6 @@
     </script>
     <script src="./public/js/confetti.js"></script>
     <script type="module" src="./public/js/script.js"></script>
+    <script type="module" src="./public/js/time.js"></script>
   </body>
 </html>

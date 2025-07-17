@@ -1,0 +1,163 @@
+/* Styling untuk section waktu */
+.time {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 1rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.time-container,
+.type-container {
+  margin-bottom: 2rem;
+}
+
+.time-box,
+.type-box {
+  padding: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.time-box h3,
+.type-box h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4338ca;
+  margin-bottom: 0.75rem;
+}
+
+.time-box .date {
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.time-box .time {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #4338ca;
+}
+
+.type-box p {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Countdown styling */
+.countdown {
+  margin: 2rem 0;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.countdown-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 80px;
+}
+
+.countdown-number {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4338ca;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  min-width: 80px;
+  display: inline-block;
+}
+
+.countdown-label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #4f46e5;
+}
+
+.countdown-ended {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #4338ca;
+  padding: 1rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+/* Location styling */
+.location-container {
+  margin-top: 2rem;
+}
+
+.address {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.links-container {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.map-link,
+.calendar-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  background-color: #4338ca;
+  color: white;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.map-link:hover,
+.calendar-link:hover {
+  background-color: #4f46e5;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .countdown-container {
+    flex-wrap: wrap;
+  }
+
+  .countdown-item {
+    min-width: 70px;
+  }
+
+  .countdown-number {
+    font-size: 2rem;
+    min-width: 70px;
+  }
+
+  .links-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .map-link,
+  .calendar-link {
+    width: 100%;
+    justify-content: center;
+  }
+}
